@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Still On The Way</title>
+<meta name="description" content="My passport sat inside UPS for five days while the tracking page said the same three words. A product case study on why no carrier tells you when a parcel stops moving.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Still on the way">
+<meta property="og:description" content="My passport sat inside UPS for five days while the tracking page said the same three words. A product case study on why no carrier tells you when a parcel stops moving.">
+<meta property="og:url" content="https://ankitakawde-en.github.io/personal/ups.html">
+<meta property="og:image" content="https://ankitakawde-en.github.io/personal/ups-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Still on the way - product case study by Ankita Kawde">
+<meta property="og:site_name" content="Ankita Kawde">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Still on the way">
+<meta name="twitter:description" content="My passport sat inside UPS for five days while the tracking page said the same three words.">
+<meta name="twitter:image" content="https://ankitakawde-en.github.io/personal/ups-card.png">
+<meta name="author" content="Ankita Kawde">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..700&family=Newsreader:opsz,wght@6..72,400..600&display=swap">
+
+<style>
+:root{
+  --stock:#FAF9F6; --raise:#FFFFFF; --sunk:#F3F1EB;
+  --ink:#15171B; --ink-2:#3C4048; --mute:#6E737B; --faint:#9B9FA7;
+  --rule:#E3E0D8; --hair:#EEEBE4;
+  --red:#BE3E26; --red-wash:#FBEDE9; --red-edge:#F0D4CB;
+  --green:#2C6A4E; --green-wash:#EAF2ED; --green-edge:#CFE2D7;
+  --amber:#8A6314; --amber-wash:#FAF3E2;
+  --shadow:0 1px 2px rgba(21,23,27,.03), 0 10px 30px rgba(21,23,27,.055);
+  --w-text:640px; --w-wide:900px; --w-full:1180px;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  --s1:8px; --s2:16px; --s3:26px; --s4:40px; --s5:64px; --s6:96px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --stock:#121317; --raise:#1A1C21; --sunk:#0D0E11;
+    --ink:#EEECE7; --ink-2:#C4C1BA; --mute:#8E939B; --faint:#676C74;
+    --rule:#2A2D33; --hair:#212429;
+    --red:#E97455; --red-wash:#281815; --red-edge:#3C241E;
+    --green:#74BC97; --green-wash:#15221A; --green-edge:#22382A;
+    --amber:#D5A64B; --amber-wash:#221B0F;
+    --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 30px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --stock:#121317; --raise:#1A1C21; --sunk:#0D0E11;
+  --ink:#EEECE7; --ink-2:#C4C1BA; --mute:#8E939B; --faint:#676C74;
+  --rule:#2A2D33; --hair:#212429;
+  --red:#E97455; --red-wash:#281815; --red-edge:#3C241E;
+  --green:#74BC97; --green-wash:#15221A; --green-edge:#22382A;
+  --amber:#D5A64B; --amber-wash:#221B0F;
+  --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 30px rgba(0,0,0,.4);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--stock); color:var(--ink);
+  font-family:Archivo,"Segoe UI",Helvetica,sans-serif;
+  font-size:17.5px; line-height:1.65; -webkit-font-smoothing:antialiased;
+}
+
+/* ---- width system ---- */
+.t,.w,.f{width:100%; margin-inline:auto; padding-inline:20px}
+.t{max-width:calc(var(--w-text) + 40px)}
+.w{max-width:calc(var(--w-wide) + 40px)}
+.f{max-width:calc(var(--w-full) + 40px)}
+
+h1,h2,h3,.pull{font-family:Newsreader,Georgia,serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(48px,10vw,92px);line-height:.98;font-weight:500;letter-spacing:-.025em}
+h2{font-size:clamp(28px,4.4vw,42px);line-height:1.1;font-weight:500;letter-spacing:-.015em}
+h3{font-size:20px;line-height:1.3;font-weight:600;font-family:Archivo,sans-serif}
+p{margin:0 0 1.1em}
+p:last-child{margin-bottom:0}
+strong{font-weight:600}
+
+.eyebrow{
+  font-family:var(--mono);font-size:11px;font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--mute);
+}
+
+/* ---- masthead + hero ---- */
+.mast{border-bottom:1px solid var(--rule)}
+.mast .in{display:flex;justify-content:space-between;gap:16px;padding-block:20px}
+.hero{padding-block:var(--s6) var(--s5)}
+.hero .kick{display:block;margin-bottom:var(--s3)}
+.hero h1{margin-bottom:var(--s2)}
+.hero .meta{font-family:var(--mono);font-size:13px;color:var(--mute);margin-bottom:var(--s4)}
+.stand{font-family:Newsreader,Georgia,serif;font-size:clamp(20px,2.6vw,25px);line-height:1.48;color:var(--ink-2)}
+.stand p{margin-bottom:.7em}
+.facts{
+  margin-top:var(--s4);padding-top:var(--s3);border-top:1px solid var(--rule);
+  display:flex;gap:var(--s3);flex-wrap:wrap;
+  font-family:var(--mono);font-size:12px;color:var(--mute);
+}
+
+/* ---- section rhythm ---- */
+.sec{padding-block:var(--s6) 0}
+.sec.tight{padding-block:var(--s5) 0}
+.sec > * + *{margin-top:var(--s3)}
+.sechead{margin-bottom:var(--s3)}
+.sechead .eyebrow{display:block;margin-bottom:12px}
+.divider{height:1px;background:var(--rule);margin-top:var(--s6)}
+.lede{font-size:20px;line-height:1.55;color:var(--ink-2)}
+.body p{margin-bottom:1.1em}
+
+/* ---- evidence frame ---- */
+.exhibit{margin-block:var(--s4)}
+.frame{background:var(--raise);border:1px solid var(--rule);border-radius:2px;box-shadow:var(--shadow);overflow:hidden}
+.cap{font-size:14.5px;line-height:1.55;color:var(--mute);margin-top:var(--s2)}
+
+/* ---- log ---- */
+.loghead{padding:16px 22px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:baseline}
+.loghead .tn{font-family:var(--mono);font-size:13px;font-weight:500}
+.loghead .svc{font-family:var(--mono);font-size:11.5px;color:var(--mute);letter-spacing:.08em}
+.ev{display:grid;grid-template-columns:158px 1fr;gap:0 22px;padding:14px 22px;border-bottom:1px solid var(--hair);align-items:start}
+.ev:last-child{border-bottom:0}
+.ev .t2{font-family:var(--mono);font-size:12.5px;color:var(--mute);padding-top:2px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ev .d{font-size:16px;line-height:1.45}
+.ev .d .loc{display:block;font-family:var(--mono);font-size:11px;color:var(--faint);margin-top:4px;letter-spacing:.08em;text-transform:uppercase}
+.ev.due{background:var(--amber-wash)}
+.ev.due .d{color:var(--amber);font-weight:600}
+.ev.blame{background:var(--red-wash)}
+.ev.blame .d{color:var(--red)}
+.void{background:var(--sunk);padding:var(--s5) 22px;text-align:center;border-block:1px dashed var(--rule)}
+.void .n{font-family:Newsreader,Georgia,serif;font-size:clamp(64px,14vw,112px);line-height:.9;font-weight:500}
+.void .l{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-top:var(--s2)}
+.void .s{font-size:15.5px;color:var(--ink-2);margin-top:14px;max-width:320px;margin-inline:auto}
+
+/* ---- pull ---- */
+.pull{
+  font-size:clamp(25px,3.8vw,36px);line-height:1.26;font-weight:500;color:var(--ink);
+  padding:var(--s4) 0 var(--s4) var(--s3);border-left:3px solid var(--red);
+  margin-block:var(--s4);
+}
+.pull.calm{border-left-color:var(--ink)}
+.pull.green{border-left-color:var(--green)}
+
+/* ---- stats ---- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:2px;overflow:hidden}
+.stat{background:var(--raise);padding:26px 22px}
+.stat .v{font-family:Newsreader,Georgia,serif;font-size:46px;line-height:1;font-weight:500;font-variant-numeric:tabular-nums}
+.stat.zero .v{color:var(--red)}
+.stat .k{font-size:14.5px;color:var(--mute);margin-top:12px;line-height:1.45}
+
+/* ---- matrix ---- */
+.scroller{overflow-x:auto;border:1px solid var(--rule);border-radius:2px;background:var(--raise);box-shadow:var(--shadow)}
+.mx{width:100%;min-width:700px;border-collapse:collapse;font-size:15px}
+.mx th,.mx td{padding:15px 16px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top}
+.mx tbody tr:last-child th,.mx tbody tr:last-child td{border-bottom:0}
+.mx thead th{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:500;border-bottom:1px solid var(--rule);white-space:nowrap}
+.mx tbody th{font-weight:600;font-size:16px;white-space:nowrap}
+.mx .who{color:var(--mute);font-size:14.5px;line-height:1.5}
+.mx tr.mine th,.mx tr.mine td{background:var(--green-wash)}
+.mx tr.mine th{color:var(--green)}
+.mark{font-family:var(--mono);font-weight:600;font-size:12.5px;letter-spacing:.04em}
+.yes{color:var(--green)} .no{color:var(--red)} .part{color:var(--amber)}
+
+/* ---- cards ---- */
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--s2)}
+.card{background:var(--raise);border:1px solid var(--rule);border-radius:2px;padding:26px}
+.card h3{margin-bottom:2px}
+.card .role{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:var(--s2)}
+.card p{font-size:15.5px;line-height:1.58;margin-bottom:.85em}
+.card .catch{display:block;color:var(--red);font-weight:600;font-size:10.5px;font-family:var(--mono);letter-spacing:.14em;text-transform:uppercase;margin-top:var(--s3);margin-bottom:8px;padding-top:var(--s2);border-top:1px solid var(--hair)}
+
+/* ---- rule box ---- */
+.rulebox{background:var(--raise);border:1px solid var(--rule);border-radius:2px;padding:8px 26px}
+.cond{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;padding-block:22px}
+.cond + .andbar + .cond{border-top:1px solid var(--hair)}
+.cond .n{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--red);padding-top:4px}
+.cond b{display:block;font-size:17px;margin-bottom:5px}
+.cond span{font-size:15.5px;color:var(--mute);line-height:1.55}
+.andbar{font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;color:var(--faint);text-align:center;padding-bottom:6px}
+
+/* ---- phones ---- */
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);border:1px solid var(--rule);border-radius:2px;padding:4px 9px;margin-bottom:var(--s2)}
+.screens{display:grid;grid-template-columns:repeat(auto-fit,minmax(224px,1fr));gap:var(--s3)}
+.scr .n2{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:10px}
+.phone{background:var(--raise);border:1px solid var(--rule);border-radius:16px;padding:17px 16px;height:356px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.phone.dk{background:#1E2228;border-color:#2E333B}
+.nub{width:46px;height:4px;border-radius:3px;background:var(--rule);margin:0 auto 15px}
+.brand{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;color:var(--amber);margin-bottom:12px}
+.tn2{font-family:var(--mono);font-size:9.5px;color:var(--faint);margin-bottom:6px}
+.st{font-family:Newsreader,Georgia,serif;font-size:24px;line-height:1.08;font-weight:500;margin-bottom:6px}
+.st.warn{color:var(--red)}
+.sub2{font-size:12px;color:var(--ink-2);line-height:1.4;margin-bottom:13px}
+.steps{border-top:1px solid var(--hair);padding-top:11px}
+.step{display:flex;gap:9px;font-size:11px;color:var(--faint);margin-bottom:9px;line-height:1.35}
+.step b{color:var(--ink);font-weight:600;display:block}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--rule);flex:none;margin-top:3px}
+.dot.on{background:var(--green)} .dot.stop{background:var(--red)}
+.btn{position:absolute;left:16px;right:16px;bottom:16px;text-align:center;font-size:11.5px;font-weight:600;padding:11px;border-radius:5px}
+.btn.grey{background:var(--sunk);color:var(--mute);border:1px solid var(--rule)}
+.btn.act{background:var(--red);color:#fff}
+.alert{background:var(--red-wash);border:1px solid var(--red-edge);border-left:3px solid var(--red);border-radius:3px;padding:11px 12px;margin-bottom:12px}
+.alert .l{font-family:var(--mono);font-size:8.5px;letter-spacing:.15em;color:var(--red);margin-bottom:5px}
+.alert p{font-size:11px;line-height:1.45;color:var(--ink-2);margin:0}
+.clock{color:#fff;font-family:Newsreader,Georgia,serif;font-size:42px;font-weight:400;text-align:center;line-height:1;margin-top:22px}
+.date2{color:#9AA0A8;font-size:10px;text-align:center;margin-top:8px;margin-bottom:30px;font-family:var(--mono);letter-spacing:.12em}
+.push{background:rgba(255,255,255,.97);border-radius:12px;padding:12px 13px}
+.push .app{font-family:var(--mono);font-size:8.5px;letter-spacing:.16em;color:#8A6314;margin-bottom:6px}
+.push .h{font-size:12.5px;font-weight:700;color:#15171B;margin-bottom:4px;line-height:1.25}
+.push .b{font-size:11px;color:#3C4048;line-height:1.45}
+
+/* ---- before / after ---- */
+.ba{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:var(--s2)}
+.pane{border:1px solid var(--rule);border-radius:2px;overflow:hidden;background:var(--raise)}
+.pane .ph{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;padding:13px 20px;border-bottom:1px solid var(--rule)}
+.pane.was .ph{background:var(--red-wash);color:var(--red);border-bottom-color:var(--red-edge)}
+.pane.now .ph{background:var(--green-wash);color:var(--green);border-bottom-color:var(--green-edge)}
+.pane .bd{padding:4px 20px 12px}
+.r{display:grid;grid-template-columns:68px 1fr;gap:14px;padding-block:12px;border-bottom:1px solid var(--hair);font-size:15px;line-height:1.42}
+.r:last-child{border-bottom:0}
+.r .dt{font-family:var(--mono);font-size:11.5px;color:var(--mute);padding-top:3px}
+.r.key{font-weight:600}
+
+/* ---- honest rows ---- */
+.rows{border-top:1px solid var(--rule)}
+.row{padding-block:24px;border-bottom:1px solid var(--hair)}
+.row b{display:block;font-size:17.5px;margin-bottom:5px}
+.row span{color:var(--ink-2);font-size:16.5px;line-height:1.6}
+
+/* ---- msg quote ---- */
+.msg{background:var(--raise);border:1px solid var(--rule);border-left:3px solid var(--green);border-radius:2px;padding:22px 24px;box-shadow:var(--shadow)}
+.msg .from{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:10px}
+.msg p{font-size:17px;line-height:1.55;margin:0}
+.msg .when{font-family:var(--mono);font-size:11.5px;color:var(--faint);margin-top:12px}
+
+footer{border-top:1px solid var(--rule);margin-top:var(--s6);padding-block:var(--s4) var(--s6)}
+footer .f2{font-family:var(--mono);font-size:11.5px;color:var(--mute);line-height:1.9}
+
+@media (max-width:560px){
+  body{font-size:16.5px}
+  :root{--s5:44px;--s6:60px}
+  .ev{grid-template-columns:1fr;gap:5px}
+  .pull{padding-left:18px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="mast"><div class="t in"><span class="eyebrow">Product case study</span><span class="eyebrow">Ankita Kawde</span></div></div>
+
+<div class="t hero">
+  <span class="eyebrow kick">UPS &middot; September 2026</span>
+  <h1>Still on the way</h1>
+  <div class="meta">1Z41V8580116395843 &middot; UPS Next Day Air &middot; $127.84</div>
+  <div class="stand">
+    <p>For five days my passport sat somewhere inside UPS, and the tracking page told me the same three words every time I looked.</p>
+    <p>I went in expecting to find a broken product. What I found was a mature market that has solved this rather well for one kind of customer and left everyone else out. That looks less like an oversight than a business model.</p>
+    <p>Here is what I found, what I got wrong along the way, and why the fix I landed on is much smaller than I wanted it to be.</p>
+  </div>
+  <div class="facts">
+    <span>SEATTLE &rarr; LOS ANGELES</span><span>POSTED 3 AUG</span><span>DUE 4 AUG</span><span>FLIGHT 7 AUG</span>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="sec">
+  <div class="t sechead">
+    <span class="eyebrow">The log</span>
+    <h2>What UPS wrote down</h2>
+  </div>
+  <div class="t"><p class="lede">Every line below is from my own screenshots. Nothing is reconstructed.</p></div>
+
+  <div class="w exhibit">
+    <div class="frame">
+      <div class="loghead"><span class="tn">1Z41V8580116395843</span><span class="svc">UPS NEXT DAY AIR</span></div>
+      <div class="ev"><div class="t2">3 Aug &middot; 4:39pm</div><div class="d">We have your package<span class="loc">Seattle, WA</span></div></div>
+      <div class="ev"><div class="t2">4 Aug &middot; 5:15am</div><div class="d">Arrived at facility<span class="loc">Los Angeles, CA</span></div></div>
+      <div class="ev"><div class="t2">4 Aug &middot; 12:03pm</div><div class="d">Processing at UPS facility<span class="loc">Los Angeles, CA</span></div></div>
+      <div class="ev due"><div class="t2">4 Aug &middot; end of day</div><div class="d">Due. Does not arrive.</div></div>
+      <div class="ev"><div class="t2">4 Aug &middot; 10:07pm</div><div class="d">&ldquo;Due to operating conditions, your package may be delayed&rdquo;<span class="loc">Los Angeles, CA</span></div></div>
+      <div class="void">
+        <div class="n">5</div>
+        <div class="l">days &middot; zero events</div>
+        <div class="s">5, 6, 7, 8 and 9 August. The page never changed once.</div>
+      </div>
+      <div class="ev blame"><div class="t2">10 Aug &middot; 4:05pm</div><div class="d">&ldquo;The receiver was not available for delivery&rdquo;</div></div>
+      <div class="ev blame"><div class="t2">10 Aug &middot; 4:22pm</div><div class="d">&ldquo;The address is incomplete... returning to sender&rdquo;</div></div>
+      <div class="ev blame"><div class="t2">10 Aug &middot; 5:35pm</div><div class="d">&ldquo;The receiver refused the package&rdquo;</div></div>
+    </div>
+    <p class="cap">Three explanations in ninety minutes. They contradict each other, and all three of them blame me.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="sec body">
+  <div class="t sechead">
+    <span class="eyebrow">4 to 6 August</span>
+    <h2>What I was doing while the screen said nothing</h2>
+  </div>
+  <div class="t">
+    <p>UPS never contacted me. Not one email, not one text, not one call. Every single thing I learned in these three days, I learned because I rang them and asked.</p>
+    <p>I refreshed that page more times than I can count. First thing in the morning. At lunch. Last thing at night. Again at two in the morning when I could not sleep and thought maybe the overnight sort had picked it up. Same three words. On the way.</p>
+    <p>I rang UPS three or four times a day on the 4th, the 5th and the 6th. Somewhere around a dozen calls. A different agent every time. I read out the tracking number every time. And every time, the person on the other end read me back the exact line I was already staring at.</p>
+    <p>By the 5th I had started calling twice in a row, on the theory that a different agent might have a different screen. They did not. Nobody I spoke to at UPS could see anything I could not see myself.</p>
+    <p>Every one of them told me it would arrive. On the evening of the 6th, around six o&rsquo;clock, one of them finally said something different. She said it was now well past the delivery date and time for a next-day service, so the package was probably lost, and I should ring the UPS Store in Seattle and file a claim.</p>
+    <p>I rang the Seattle store. They were closing and there was nobody left to talk to me. And it would not have mattered if there had been. My husband had paid for the shipping, so the claim was his to file, not mine. I was the one with no passport, on a flight at two the next afternoon that I had to leave for by eleven. I was not a customer.</p>
+    <p>That evening I stopped being polite. I posted the whole thing on LinkedIn. I tweeted at UPS. Then I looked up email addresses and wrote directly to their Chief Executive, to the president of their US business, and to their Chief Commercial and Strategy Officer. I copied investor relations and the press office.</p>
+    <p>That worked. On the morning of the 7th the executive office forwarded my email down to UPS Corporate Customer Relations, and someone there took my case. She had my tracking number, my call history, everything. Her replies came from the general customerservice@ups.com mailbox, signed with a first name and an initial. One person, one shared inbox, and no other way to reach the case.</p>
+    <p>Which is worth saying plainly. Around a dozen calls to the number printed on the website got me a named human exactly zero times. Five emails, sent to people who were never meant to read them, got me one by the next morning. The product had no escalation path in it. The only one that existed was the one I built by going around the product entirely.</p>
+    <p>I flew home to Seattle that afternoon without my passport, on a TSA identity check at the airport that cost me $45 and a very long wait.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="sec body">
+  <div class="t sechead">
+    <span class="eyebrow">10 August</span>
+    <h2>A stranger in Canada found my passport</h2>
+  </div>
+  <div class="t">
+    <p>A Senior Account Manager at UPS Canada had seen my LinkedIn post.</p>
+    <p>He messaged me. Over a weekend, in his own time, in a different country, for a customer who was not his, he went and looked at the back end.</p>
+  </div>
+
+  <div class="w exhibit">
+    <div class="msg">
+      <div class="from">Message from UPS Canada</div>
+      <p>They have found your passport. It is out for delivery at the Los Angeles address now.</p>
+      <div class="when">MONDAY 10 AUGUST &middot; 3:20PM PST</div>
+    </div>
+  </div>
+
+  <div class="t">
+    <p>I did not know what to say back to him.</p>
+    <p>Because at that moment I had a live email thread running with the customer relations manager UPS had assigned me on the 7th. She had my case. She had every detail. And she knew nothing, because it was the end of her day and she had gone home.</p>
+    <p>A stranger in another country, with no reason to help me and nothing to gain from it, knew where my passport was. The person officially handling my case did not.</p>
+    <p>Thirty minutes later my phone rang. A supervisor from the UPS Los Angeles facility had driven to the delivery address herself, with my passport, and she was standing outside it.</p>
+    <p>Now look at the log again. The first thing UPS&rsquo;s own system recorded that day was at <strong>4:05pm</strong>, and what it recorded was that the receiver was not available. By then two people had already worked it out between them. A man in Canada had messaged me at 3:20, and a UPS supervisor had already driven the passport to the address herself.</p>
+    <p>The system wrote nothing for three quarters of an hour after he told me. And when it finally did write something, it was wrong. Then it wrote two more things, and those were wrong too.</p>
+    <p>Nobody had told me she was coming. I was in Seattle. I had flown home three days earlier.</p>
+    <p>So I had to ask her to send it back. New tracking number on the 13th. It reached Seattle on the 17th, two weeks after it was posted. UPS refunded the $127.84 and the $45 on the 25th, after a customer relations manager and a long chain of emails.</p>
+  </div>
+
+  <div class="t"><div class="pull">Nothing in the product worked. What worked was a stranger on LinkedIn deciding, on his own weekend, to go and look.</div></div>
+
+  <div class="t"><p>They never lost it. They had it the whole time. They just never told me anything, including that they were bringing it.</p></div>
+</div>
+
+<div class="divider"></div>
+
+<div class="sec body">
+  <div class="t sechead">
+    <span class="eyebrow">The question</span>
+    <h2>This is not a delivery problem</h2>
+  </div>
+  <div class="t">
+    <p>UPS is good at delivering. In December 2025 they ran at <strong>97.2%</strong> on time, the best of the big US carriers, ahead of FedEx Express at 95.3% and USPS at 94.1%.</p>
+    <p>Worth sitting with the scale for a second. 23.1 billion parcels moved in the United States in 2025, around 732 every second. Ninety seven per cent on time is a genuinely good number, and three in a hundred of 23.1 billion is still an enormous number of people waiting for something that did not come. The measure is generous too: it excludes delays the carrier says were outside its control, and allows ground an extra day at peak.</p>
+    <p>How many of those went quiet the way mine did, with no scan at all for days and nobody noticing? I could not find that number anywhere, and I do not think anyone publishes it. A thing nobody measures is usually a thing nobody owns.</p>
+    <p>There were three separate moments where UPS knew something and said nothing. The package stopped moving. A supervisor was on her way with it. It was going back across the country. I found out about all three of them late, and two of them only because someone went looking on my behalf.</p>
+    <div class="pull calm">UPS is good at delivering and bad at telling you when it fails.</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="sec">
+  <div class="t sechead">
+    <span class="eyebrow">Research</span>
+    <h2>Checking it was not just me</h2>
+  </div>
+  <div class="t body">
+    <p>I could not interview carrier customers, so I used Claude to pull and sort public complaints. 1,344 app reviews, 50 Reddit posts, 20 posts on X.</p>
+    <p>From those I picked out the <strong>110 people who had paid for a guaranteed fast service</strong>, because they are the ones with a promise to point at.</p>
+  </div>
+  <div class="w exhibit">
+    <div class="stats">
+      <div class="stat"><div class="v">3.4</div><div class="k">days average with no update at all</div></div>
+      <div class="stat"><div class="v">40%</div><div class="k">of the stories just stop. They never found out</div></div>
+      <div class="stat"><div class="v">34%</div><div class="k">rang the carrier. Another 12% went public</div></div>
+      <div class="stat zero"><div class="v">0</div><div class="k">said the carrier contacted them first</div></div>
+    </div>
+    <p class="cap">These are complaints, not interviews. Only about three percent of app reviews name a service level, so I read most of them rather than filtering. It tells me the shape of the problem, not the size. Sizing it needs internal exception volume, and a logistics PM who has that access told me plainly I was not going to get it from outside.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="sec">
+  <div class="t sechead">
+    <span class="eyebrow">The turn</span>
+    <h2>Then I looked at who had already solved it</h2>
+  </div>
+  <div class="t body">
+    <p class="lede">This is where the case study actually starts, because my first assumption was wrong.</p>
+    <p>This is a mature market. Narvar has been at it since 2012 and says it reaches 125 million people. FedEx has built its own version. Retailers have been paying real money for this for over a decade.</p>
+    <p class="cap">Brand counts, carrier counts, accuracy rates and list prices below are each company&rsquo;s own published claims, taken from their product and pricing pages. The $37,440 Narvar figure is an average contract value reported by Vendr, not by Narvar. I have not tested any of it.</p>
+  </div>
+  <div class="f exhibit">
+    <div class="scroller">
+      <table class="mx">
+        <thead><tr><th>Who</th><th>What it actually does</th><th>Notices trouble</th><th>Tells you</th><th>Needs a shop</th></tr></thead>
+        <tbody>
+          <tr><th>Narvar</th><td class="who">Copies carrier events onto the shop&rsquo;s own tracking page and pushes messages. 1,500 brands, 1,000+ carriers, about $37,440 a year</td><td><span class="mark no">no</span></td><td><span class="mark yes">yes</span></td><td><span class="mark no">yes</span></td></tr>
+          <tr><th>parcelLab</th><td class="who">Predicts which packages will run late from past carrier performance, then notifies</td><td><span class="mark part">predicts</span></td><td><span class="mark yes">yes</span></td><td><span class="mark no">yes</span></td></tr>
+          <tr><th>ClickPost</th><td class="who">Delay and exception updates over WhatsApp, SMS and email. 600+ carriers, 30+ countries</td><td><span class="mark no">no</span></td><td><span class="mark yes">yes</span></td><td><span class="mark no">yes</span></td></tr>
+          <tr><th>AfterShip</th><td class="who">Branded tracking and milestone updates for shops, from $29 a month. Also runs a free consumer tracking app anyone can use</td><td><span class="mark no">no</span></td><td><span class="mark yes">yes</span></td><td><span class="mark part">for the paid product</span></td></tr>
+          <tr><th>FedEx fdx</th><td class="who">A carrier&rsquo;s own version. Branded tracking, predicted delivery windows. Added AI delay detection with parcelLab in Feb 2026</td><td><span class="mark part">predicts</span></td><td><span class="mark yes">yes</span></td><td><span class="mark no">yes</span></td></tr>
+          <tr class="mine"><th>What I built</th><td class="who">Fires when scans stop arriving on a package whose date has already passed</td><td><span class="mark yes">silence</span></td><td><span class="mark yes">yes</span></td><td><span class="mark yes">no</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="sec">
+  <div class="t sechead">
+    <span class="eyebrow">Finding one</span>
+    <h2>Everyone built the telling. Almost nobody built the noticing.</h2>
+  </div>
+  <div class="t body">
+    <p>They are two different jobs. <strong>Noticing</strong> is realising something has gone wrong. <strong>Telling</strong> is letting the customer know. Every company above is very good at the second one.</p>
+  </div>
+  <div class="w exhibit">
+    <div class="duo">
+      <div class="card">
+        <h3>Narvar</h3>
+        <div class="role">The relay</div>
+        <p>It watches the carrier&rsquo;s feed and retells it in the shop&rsquo;s voice, on the shop&rsquo;s page, with a button attached. Instead of leaving for ups.com, you stay where you bought the thing.</p>
+        <p>Retailers love it because a tracking page gets opened three or four times per order, and every one of those visits used to belong to the carrier. Now the shop keeps the traffic, the branding, and the chance to sell you something else.</p>
+        <span class="catch">The catch</span>
+        <p>It can only repeat what the carrier writes down. Silence in, silence out. It would have told me nothing, beautifully.</p>
+      </div>
+      <div class="card">
+        <h3>parcelLab</h3>
+        <div class="role">The forecaster</div>
+        <p>The most advanced of the group. It reads live carrier performance, past shipping patterns and regional data, and flags packages it thinks will run late before the carrier admits anything.</p>
+        <p>FedEx thought enough of it to put parcelLab&rsquo;s technology inside their own product in February 2026, rather than spend years building an equivalent.</p>
+        <span class="catch">The catch</span>
+        <p>A prediction is a guess. They claim to catch 90% of delays at over 85% accuracy, which also means roughly one flag in seven is wrong. Warn people about parcels that were fine, often enough, and they stop reading the warnings.</p>
+      </div>
+    </div>
+  </div>
+  <div class="t body">
+    <p>And parcelLab is looking for packages that are <em>slow</em>. Not packages that have gone <em>quiet</em>. Mine never looked late. It looked completely normal. There was just nothing there.</p>
+    <div class="pull">A heart monitor does not beep every time the heart beats. It beeps when the beats stop.</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="sec body">
+  <div class="t sechead">
+    <span class="eyebrow">Finding two</span>
+    <h2>Nearly every one of them needs a shop</h2>
+  </div>
+  <div class="t">
+    <p>Narvar, parcelLab, ClickPost, AfterShip, and even FedEx&rsquo;s own fdx. Every one of them is sold to retailers, and the proactive part only runs when a shop has paid for it.</p>
+    <p><strong>AfterShip is the one partial exception, and it is worth being straight about it.</strong> It also runs a free consumer app that anyone can paste a tracking number into, with no shop involved. But that app reads the same carrier feed I was reading on the UPS site. It would have shown me the same three words for five days, because the silence was never in the presentation layer. It was in the data.</p>
+    <p>A passport posted between two people is not a retail shipment. Nobody had bought anything on my behalf, so nobody told me anything, and I could not find a product anywhere that would have.</p>
+    <div class="pull">The one with the data has no reason to speak. The one with the reason to speak has no data.</div>
+    <p>The carrier can see the package stop moving and has little commercial reason to advertise its own failures. The shop would happily say something and cannot see anything until the carrier writes it down first.</p>
+    <p>That does not look like a gap in the market to me. It looks like a gap between two parties, and it stays open because neither of them has much reason to close it.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="sec">
+  <div class="t sechead">
+    <span class="eyebrow">The fix</span>
+    <h2>So what would it actually take</h2>
+  </div>
+  <div class="t body"><p class="lede">A rule that fires when nothing happens.</p></div>
+
+  <div class="w exhibit">
+    <div class="rulebox">
+      <div class="cond">
+        <div class="n">01</div>
+        <div><b>The delivery date shown to the customer has passed.</b>
+        <span>Captured at shipping, not read live. When things go wrong UPS deletes the estimated date and replaces it with &ldquo;we are working to get you a new delivery date&rdquo;. A rule reading the live screen would watch the system erase its own deadline and never fire.</span></div>
+      </div>
+      <div class="andbar">AND</div>
+      <div class="cond">
+        <div class="n">02</div>
+        <div><b>No scan for a set gap.</b>
+        <span>Twelve hours on next day services, twenty four on two day. Late but still moving is just late. It gets a new date and nothing else.</span></div>
+      </div>
+    </div>
+    <p class="cap">Both conditions together are what separate a delay from a disappearance. Either one on its own generates noise.</p>
+  </div>
+
+  <div class="w exhibit">
+    <span class="tag">Concept mockup &middot; not a real UPS screen</span>
+    <div class="screens">
+      <div class="scr">
+        <div class="n2">01 &middot; What I saw</div>
+        <div class="phone">
+          <div class="nub"></div><div class="brand">TRACKING</div>
+          <div class="tn2">1Z41V8580116395843</div>
+          <div class="st">On the way</div>
+          <div class="sub2">Arriving Tuesday 4 August by end of day</div>
+          <div class="steps">
+            <div class="step"><div class="dot on"></div><div><b>Arrived in Los Angeles</b>4 Aug, 5:15am</div></div>
+            <div class="step"><div class="dot on"></div><div><b>Processing at facility</b>4 Aug, 12:03pm</div></div>
+            <div class="step"><div class="dot on"></div><div><b>May be delayed, no new date</b>4 Aug, 10:07pm</div></div>
+            <div class="step"><div class="dot"></div><div>Out for delivery</div></div>
+          </div>
+          <div class="btn grey">Change Delivery Options</div>
+        </div>
+      </div>
+      <div class="scr">
+        <div class="n2">02 &middot; The whole feature</div>
+        <div class="phone dk">
+          <div class="clock">8:02</div>
+          <div class="date2">WEDNESDAY 5 AUGUST</div>
+          <div class="push">
+            <div class="app">UPS</div>
+            <div class="h">Your package has not been scanned</div>
+            <div class="b">Due 4 Aug by end of day. Last scanned Los Angeles CA, 4 Aug 12:03pm. Nothing since.</div>
+          </div>
+        </div>
+      </div>
+      <div class="scr">
+        <div class="n2">03 &middot; The honest state</div>
+        <div class="phone">
+          <div class="nub"></div><div class="brand">TRACKING</div>
+          <div class="tn2">1Z41V8580116395843</div>
+          <div class="st warn">Not moving</div>
+          <div class="sub2">Past its delivery date. No scan for 20 hours.</div>
+          <div class="alert"><div class="l">WHAT WE KNOW</div><p>Last scanned at our Los Angeles facility on 4 Aug at 12:03pm. Nothing since.</p></div>
+          <div class="steps">
+            <div class="step"><div class="dot on"></div><div><b>Processing, Los Angeles</b>4 Aug, 12:03pm</div></div>
+            <div class="step"><div class="dot stop"></div><div><b>No scan since</b>20 hours</div></div>
+          </div>
+          <div class="btn act">Get help with this</div>
+        </div>
+      </div>
+    </div>
+    <p class="cap">Facts only. It never says lost, missing, or that UPS cannot find it, because UPS does not know any of those things. And once a package is flagged, movement becomes news too. If a supervisor is driving to your address with it, that is exactly the moment to tell you.</p>
+  </div>
+
+  <div class="t body">
+    <p><strong>What I cut after feedback.</strong> A case page, a named owner, a promised callback time, and a claim button. Every one of those needs a real person at a real facility to own it, which across hundreds of buildings is a hiring decision. In logistics what gets built is what is operationally doable, not what looks good on a screen.</p>
+    <p><strong>Where I would launch it.</strong> The problem is universal, the launch is not. All 110 of my cases are people who paid for a fast service, so that is as far as my evidence reaches. The signal is cleaner there too: air packages get scanned several times a day, while ground moves in long hops and twelve hours of silence on ground is just a Tuesday. Start on the guaranteed air services, tune the gap against how often flagged packages turn up fine, then widen.</p>
+    <p><strong>Why it has to be the carrier.</strong> A UPS agent already applied this rule on 6 August. She did it in her head, two days after the date had passed, using a figure she came up with on the call, only because I rang for the tenth time, and then she said &ldquo;lost&rdquo;, which is the one word a carrier&rsquo;s lawyers will never put on a screen. I am not asking UPS to invent judgement it does not have. And Narvar cannot do this at all, because Narvar needs a shop to have paid.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="sec">
+  <div class="t sechead">
+    <span class="eyebrow">Honestly</span>
+    <h2>What this is actually worth</h2>
+  </div>
+  <div class="t body"><p class="lede">My own case is a good illustration of the problem and a weak illustration of the solution.</p></div>
+
+  <div class="w exhibit">
+    <div class="ba">
+      <div class="pane was">
+        <div class="ph">What happened</div>
+        <div class="bd">
+          <div class="r"><span class="dt">4 Aug</span><span>Due. Never arrives. I ring three or four times</span></div>
+          <div class="r"><span class="dt">5 Aug</span><span>Nothing on screen. I ring again, twice in a row</span></div>
+          <div class="r"><span class="dt">6 Aug</span><span>Evening: probably lost. I email three executives to get a human</span></div>
+          <div class="r key"><span class="dt">7 Aug</span><span>I fly home without it, on a $45 identity check</span></div>
+          <div class="r"><span class="dt">10 Aug</span><span>A supervisor arrives unannounced. I am 1,100 miles away</span></div>
+        </div>
+      </div>
+      <div class="pane now">
+        <div class="ph">With this</div>
+        <div class="bd">
+          <div class="r"><span class="dt">4 Aug</span><span>Due. Never arrives. I ring nobody</span></div>
+          <div class="r key"><span class="dt">5 Aug</span><span>8am: told. Last scan LA, 4 Aug 12:03pm, nothing since</span></div>
+          <div class="r"><span class="dt">6 Aug</span><span>I already know. I sort the airport check calmly</span></div>
+          <div class="r key"><span class="dt">7 Aug</span><span>I fly home without it, on a $45 identity check</span></div>
+          <div class="r"><span class="dt">10 Aug</span><span>Told she is coming, and told where to send it instead</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="cap">I was always going to fly home on the 7th. The physical outcome was fixed no matter what anyone told me. What this buys me is a day and a half of knowing, and not spending three days on the phone. That is real. It is not dramatic.</p>
+  </div>
+
+  <div class="t">
+    <div class="rows">
+      <div class="row"><b>It will sometimes be wrong, and I should say so.</b><span>A rule that fires on silence will occasionally fire on a package that was fine. A scan gets missed, a van runs late, and the message goes out to someone whose parcel turns up that afternoon. Annoying. And if it happens often enough people stop reading the messages, which is worse than never sending them. That is exactly why the rule needs both conditions rather than one, and why the gap is a dial rather than a number.</span></div>
+      <div class="row"><b>In year one this might cost UPS money.</b><span>Telling people their package has stopped is more likely to make them ring than stop them ringing. And more people finding out means more claims, because today a lot of people never find out and never claim. Both are real.</span></div>
+      <div class="row"><b>What saves it is that it is almost free.</b><span>A rule over data UPS already holds. No new tracking, no new staff. Cheap enough that an unproven upside still clears the bar, and cheap enough to run in one region and switch off.</span></div>
+      <div class="row"><b>For most customers the value is small.</b><span>Knowing earlier does not get you your parcel. You still wait. Some people would rather know. Others just worry sooner.</span></div>
+      <div class="row"><b>For a few, it is everything.</b><span>A passport before a flight. Medication. A filing deadline. A part for a machine that is down. This is insurance: a tiny cost spread over everything, for a rare but large payoff. Nobody argues insurance is good value on an average day.</span></div>
+    </div>
+    <div class="pull calm">This is a small feature. It will not move UPS&rsquo;s numbers much. It matters enormously to a small number of people on the worst day of their shipping year.</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="sec body">
+  <div class="t sechead">
+    <span class="eyebrow">Measurement</span>
+    <h2>How I would know it worked</h2>
+  </div>
+  <div class="t">
+    <p><strong>The main number.</strong> How often UPS tells the customer before the customer asks. In my case it was zero, and none of the 110 people whose complaints I read said the carrier reached them first.</p>
+    <p><strong>The one that matters most in my own case.</strong> Repeat contacts per exception. I made around a dozen calls in three days and learned nothing from any of them.</p>
+    <p><strong>The guardrail.</strong> Claims filed per exception, before and after. And how often a flagged package turns up within a few hours of being flagged.</p>
+    <p><strong>The number I would ask UPS for on day one.</strong> After a shipper has a package go missing, does their volume drop over the next three months? They have it. I do not. It decides whether this protects the network growth they are already paying for, or whether it is only a decent thing to do.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="sec">
+  <div class="t sechead">
+    <span class="eyebrow">Revisions</span>
+    <h2>Where I changed my answer</h2>
+  </div>
+  <div class="t">
+    <div class="rows">
+      <div class="row"><b>I checked whether this was already solved. It was.</b><span>Four companies and a rival carrier had built it. Doing that check is what produced the actual finding: every one of them built it for shops, and none of them for the person waiting.</span></div>
+      <div class="row"><b>I cut the best-looking screen I had.</b><span>My first design named an owner and promised an update by 5pm. A mentor pointed out that if nobody is really assigned, that screen does the exact thing I was complaining about. It promises something the system cannot keep. So it went.</span></div>
+      <div class="row"><b>I corrected my own public claim.</b><span>I had said UPS lost my passport. They did not. They had it the whole time, a supervisor drove it to the door, and nobody told me any of it.</span></div>
+      <div class="row"><b>I marked my own fix down.</b><span>I twice valued it higher than it deserved. Checked against my real timeline, it would not have got my passport to me one hour sooner. What it buys is three days of phone calls I never make, and a day and a half of knowing. That is the honest number.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="sec body">
+  <div class="t sechead">
+    <span class="eyebrow">The next one</span>
+    <h2>The bigger thing I noticed and did not solve</h2>
+  </div>
+  <div class="t">
+    <p>My husband paid for the shipping. So UPS&rsquo;s contract was with him. The refund was his to claim and the apology was his to receive.</p>
+    <p>I was the one with no passport, three days on the phone, and a $45 check at an airport counter.</p>
+    <div class="pull">The money and the harm sat with different people, and I could not even file the claim.</div>
+    <p>That is not a quirk of my story. It is how the whole system is built. You buy from a shop, the shop pays the carrier, the carrier breaks it, the carrier pays the shop. The person actually standing at the wrong end of it is not in that conversation at all.</p>
+    <p>It is also the shape of the bigger problems in this industry. Returns fraud works precisely because the person who loses the money and the person who caused the loss are never the same person.</p>
+    <p>That is worth a second case study, properly researched. It is a bigger problem than this one.</p>
+    <p>I am not really complaining. I got the passport back on the 17th and every cent back on the 25th, and the people who eventually helped me were kind about it.</p>
+    <p>It is just interesting that an industry got this good at telling you your parcel is late, and it is still nobody&rsquo;s job to notice when it stops.</p>
+  </div>
+</div>
+
+<footer class="t">
+  <div class="f2">
+    Ankita Kawde &middot; September 2026<br>
+    Sources: my own tracking screenshots &middot; ShipMatrix on-time data, December 2025 &middot; Pitney Bowes Parcel Shipping Index 2025 &middot; Vendr contract pricing &middot; product pages for Narvar, parcelLab, ClickPost, AfterShip and FedEx fdx<br>
+    All screens are concept mockups and not real UPS product.
+  </div>
+</footer>
+</body>
+</html>
